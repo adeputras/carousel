@@ -31,6 +31,7 @@
     function openMenu() {
       $('.burger').addClass('open');
       $('.wrapper').css("margin-left","270px");
+      $('.section-header').css("left","270px");
       $('.menu-sidebar').css("left","0");
       $('body').css({
         'overflow': 'hidden',
@@ -40,6 +41,7 @@
     function closeMenu() {
       $('.burger').removeClass('open');
       $('.wrapper').css("margin-left","0");
+      $('.section-header').css("left","0");
       $('.menu-sidebar').css("left","-270px");
       $('body').css({
         'overflow': '',

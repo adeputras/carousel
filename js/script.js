@@ -34,7 +34,8 @@
       $('.section-header').css("left","270px");
       $('.menu-sidebar').css("left","0");
       $('body').css({
-        'overflow': 'hidden'
+        'overflow': 'hidden',
+        'height' : '100vh'
       });
     }
     function closeMenu() {
@@ -43,7 +44,8 @@
       $('.section-header').css("left","");
       $('.menu-sidebar').css("left","-270px");
       $('body').css({
-        'overflow': ''
+        'overflow': '',
+        'height' : ''
       });
     }
     // Search form

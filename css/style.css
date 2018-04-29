@@ -69,6 +69,7 @@ img {
 .section-header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
   -webkit-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
@@ -148,17 +149,60 @@ img {
   height: 25px;
   display: inline-block;
   vertical-align: middle;
-  cursor: pointer;
+
 }
-.search svg {
+.search-icon{
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+.search-icon svg {
   fill: #ffffff;
-  -webkit-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  opacity: 1;
+  visibility: visible;
 }
 .bg-header .search svg {
   fill: #333333;
+}
+.search .search-icon:before,
+.search .search-icon:after
+{
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 30%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  opacity: 0;
+  visibility: hidden;
+}
+.search .search-icon:after{
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.search.open .search-icon:before,
+.search.open .search-icon:after{
+  opacity: 1;
+  visibility: visible;
+}
+.search.open .search-icon svg{
+  opacity: 0;
+  visibility: hidden;
+}
+.search.open .bg-search {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 .user-profile .avatar {
   border-radius: 50%;
@@ -248,12 +292,39 @@ img {
   overflow-y: auto;
   background-color: #333;
   left: -270px;
-  padding-top: 100px;
+  padding-top: 80px;
   -webkit-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   z-index: 2;
+}
+.search-sidebar{
+  position: fixed;
+  width: 270px;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #333;
+  right: -270px;
+  padding: 30px 15px;
+  -webkit-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  z-index: 2;
+}
+.search-sidebar input{
+  outline: none;
+  box-shadow: none;
+}
+.search-sidebar .btn-default,
+.search-sidebar .btn-default:active
+{
+  background-color: #b3965d;
+  border-color: #b3965d;
+  color: #ffffff;
+  outline: 0;
 }
 .menu-sidebar a {
   color: #ffffff;
@@ -394,7 +465,9 @@ img {
     width: 200px;
     position: relative;
   }
-
+  .search-sidebar{
+    padding: 20px 15px;
+  }
   .header-main ul {
     width: auto;
   }

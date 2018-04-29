@@ -179,6 +179,7 @@ img {
   transform: rotate(45deg);
   opacity: 0;
   visibility: hidden;
+  left: 2px;
 }
 .search .search-icon:after{
   -webkit-transform: rotate(-45deg);

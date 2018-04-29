@@ -34,8 +34,7 @@
       $('.section-header').css("left","270px");
       $('.menu-sidebar').css("left","0");
       $('body').css({
-        'overflow': 'hidden',
-        'height': '100vh'
+        'overflow': 'hidden'
       });
     }
     function closeMenu() {
@@ -44,8 +43,7 @@
       $('.section-header').css("left","0");
       $('.menu-sidebar').css("left","-270px");
       $('body').css({
-        'overflow': '',
-        'height': ''
+        'overflow': ''
       });
     }
     // Search form
@@ -63,8 +61,7 @@
       $('.section-header').css("left","-270px");
       $('.search-sidebar').css("right","0");
       $('body').css({
-        'overflow': 'hidden',
-        'height': '100vh'
+        'overflow': 'hidden'
       });
     }
     function closeSearch() {
@@ -73,8 +70,7 @@
       $('.section-header').css("left","0");
       $('.search-sidebar').css("right","-270px");
       $('body').css({
-        'overflow': '',
-        'height': ''
+        'overflow': ''
       });
     }
 
